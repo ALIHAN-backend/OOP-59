@@ -1,0 +1,12 @@
+Команды для регистрации ваших данных
+git config --global user.name "ALIHAN-backend"
+git config --global user.email "alihansatylganov1@gmail.com"
+
+Команды один раз на проект
+git init
+git remote add origin link(ссылка)
+
+Команды для частого использования
+
+git status
+git add .

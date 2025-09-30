@@ -10,3 +10,5 @@ git remote add origin link(ссылка)
 
 git status
 git add .
+git commit -m "сообщение"
+git push origin master

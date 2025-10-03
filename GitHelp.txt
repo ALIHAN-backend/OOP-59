@@ -12,3 +12,6 @@ git status
 git add .
 git commit -m "сообщение"
 git push origin master
+
+git branch
+git branch my_branch

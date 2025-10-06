@@ -4,3 +4,24 @@
 # функций или классов. В отличие от pass, ... (многоточие) не является стандартным
 # оператором Python и обычно не используется в таком контексте; pass - единственный
 # способ создать пустую структуру, которая будет корректно обработана интерпретатором.
+
+# Родительский класс
+class Transport:
+    def __init__(self, speed):
+        self.speed = speed
+
+    def move(self):
+        return f"Транспорт движется со скоростью {self.speed} км/ч"
+
+# Дочерний класс
+class Car(Transport):
+    def __init__(self, speed, brand):
+        super().__init__(speed)
+        self.brand = brand
+
+    def move(self):
+        return f"Машина {self.brand} едет со скоростью {self.speed} км/ч"
+
+# Пример:
+my_car = Car(90, "Toyota")
+print(my_car.move())

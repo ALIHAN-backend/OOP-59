@@ -30,25 +30,25 @@ John = BankAccount("John", "12345", 100)
 
 # Абстракция
 
-# from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod
 
-# class Animal(ABC):
-#     @abstractmethod
-#     def move(self):
-#         pass
-#
-#     @abstractmethod
-#     def make_sound(self):
-#         pass
-#
-# class Dog(Animal):
-#      def __init__(self, name):
-#         self.name = name
-#
-#      def move(self):
-#          return f"{self.name} step"
-#
-#      def make_sound(self):
-#          return f"{self.name} Gaf Gaf"
-#
-# Gufi = Dog("Gufu")
+class Animal(ABC):
+    @abstractmethod
+    def move(self):
+        pass
+
+    @abstractmethod
+    def make_sound(self):
+        pass
+
+class Dog(Animal):
+     def __init__(self, name):
+        self.name = name
+
+     def move(self):
+         return f"{self.name} step"
+
+     def make_sound(self):
+         return f"{self.name} Gaf Gaf"
+
+Gufi = Dog("Gufu")

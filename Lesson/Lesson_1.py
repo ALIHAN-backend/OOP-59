@@ -30,3 +30,4 @@ asuna = Hero("Asuna", 99, 11000)
 # string = "Text"
 # print(type(integer)) = <class 'int'>
 # print(type(string)) = <class 'str'>
+

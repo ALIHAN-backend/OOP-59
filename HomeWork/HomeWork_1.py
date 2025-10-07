@@ -14,3 +14,4 @@ person2 = Person("Боб", 18, "Санкт-Петербург")
 # Вызов метода
 person1.action()
 person2.action()
+

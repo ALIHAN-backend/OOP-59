@@ -24,4 +24,5 @@ class Car(Transport):
 
 # Пример:
 my_car = Car(90, "Toyota")
+
 print(my_car.move())

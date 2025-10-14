@@ -67,30 +67,50 @@
 # test2 = MyList([1,23,4,56,7])
 # test2[1] =  123
 
-class Test:
-    #  Атрибута класса
-    name = "Class Name"
-    def __init__(self, value):
-    # Атрибута экземпляра класса
-     self.value = value
+# class Test:
+#     #  Атрибута класса
+#     name = "Class Name"
+#     def __init__(self, value):
+#     # Атрибута экземпляра класса
+#      self.value = value
 #
 #   def test(self):
 #        pass
 #
 #   def __test2(self):
 #       pass
-
-    def _just_method(self):
-        print(f"{self.value} я все")
-
-    @staticmethod
-    def static_method():
-        print("я все")
-
-    @classmethod
-    def class_method(cls):
-        print(cls.name)
-
+#
+#     def _just_method(self):
+#         print(f"{self.value} я все")
+#
+#     @staticmethod
+#     def static_method():
+#         print("я все")
+#
+#     @classmethod
+#     def class_method(cls):
+#         print(cls.name)
+#
+#     @property
+#     def property_method(self):
+#         return "Atrebut"
+#
 # objects = Test("test")
 # Test.static_method()
 # Test._just_method()
+# print(objects.value)
+# print(objects._just_method())
+# print(objects.property_method)
+
+class User:
+
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+
+    @property
+    def get_full_name(self):
+        return f'{self.first_name} {self.last_name}'
+
+john = User('John', 'Doe')
+print(john.get_full_name)

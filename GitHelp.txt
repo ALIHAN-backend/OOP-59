@@ -27,3 +27,15 @@ feat/register
 update/register
 delete/register
 fix/register
+
+py -m venv venv_name
+python -m venv venv_name
+python3 -m venv venv_name
+
+source venv/bin/activate
+venv\Scripts\activate
+
+cd ../
+cd name_dir
+mkdir name_dir
+touch name_file

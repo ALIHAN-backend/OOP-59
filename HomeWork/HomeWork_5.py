@@ -39,7 +39,6 @@ class Person:
     def is_adult(age):
         return age >= 18
 
-    # 4. Классовый метод — создание из года рождения
     @classmethod
     def from_birth_year(cls, name, birth_year):
         current_year = 2025

@@ -82,26 +82,42 @@
 #             print("не нашел")
 #
 # find_element([1,33,543,54,2,343,4], 4)
+#
+# def find_element(array, target):
+#     left, right = 0, len(array) -1
+#
+#     while left <= right:
+#         mid = (left + right) // 2
+#         print(f"LEFT: {left} == RIGHT: {right}")
+#         print(mid)
+#         if array[mid] == target:
+#             return print("Found")
+#         elif array[mid] < target:
+#             left = mid + 1
+#         else:
+#             right = mid - 1
+#     return print("Not Found")
+#     #
+#     # for i in array:
+#     #     if i == target:
+#     #         print("нашли")
+#     #     else:
+#     #         print("не нашли")
+#
+# find_element([1,2,3,4,5,6,7,8,9,10,11], 11)
 
-def find_element(array, target):
-    left, right = 0, len(array) -1
+def two_sum(array, target):
 
-    while left <= right:
-        mid = (left + right) // 2
-        print(f"LEFT: {left} == RIGHT: {right}")
-        print(mid)
-        if array[mid] == target:
-            return print("Found")
-        elif array[mid] < target:
-            left = mid + 1
-        else:
-            right = mid - 1
-    return print("Not Found")
-    #
-    # for i in array:
-    #     if i == target:
-    #         print("нашли")
-    #     else:
-    #         print("не нашли")
+    value = {} # число: индекс # 2: 0
+    for i, num in enumerate(array):
 
-find_element([1,2,3,4,5,6,7,8,9,10,11], 11)
+        print(f"Dict: {value}")
+           # 2       # 9 - 7
+        print(f"i: {i} num: {num} target: {target} \n {target} - {num}")
+        complement = target - num
+        print(f"complement: {complement}")
+        if complement in value:
+            return [value[complement], i]
+        value[num] = i
+
+print(two_sum([2,7,11,15], 26))

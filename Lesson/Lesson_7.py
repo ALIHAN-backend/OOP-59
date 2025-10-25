@@ -27,7 +27,7 @@ def create_user(name, age, hobby):
     connect.commit()
     print("user added!!")
 
-# create_user('Stas', 23, "Спать")
+create_user('Stas', 23, "Спать")
 
 
 
@@ -38,7 +38,7 @@ def read_users():
     for i in users:
         print(f"NAME: {i[0]}, AGE: {i[1]} HOBBY: {i[2]}")
 
-# read_users()
+read_users()
 
 def update_user(new_name, rowid):
     # cursor.execute(f'UPDATE users SET name = "{new_name}" WHERE rowid = "{rowid}"')
@@ -51,11 +51,11 @@ def update_user(new_name, rowid):
 
 update_user("Nikita", 3)
 
-# read_users()
+read_users()
 
 def delete_user(rowid):
     cursor.execute(f"DELETE FROM users WHERE rowid = '{rowid}'")
     connect.commit()
     print('Users deleted!!')
 
-# delete_user(2)
+delete_user(2)

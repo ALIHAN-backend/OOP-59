@@ -3,59 +3,59 @@ import sqlite3
 # A4
 connect = sqlite3.connect("users.db")
 
-# Hand and Pen
+# Рука и Ручка
 cursor = connect.cursor()
 
 cursor.execute("""
-    CREATE TABLE IF NOT EXIST users (
+    CREATE TABLE IF NOT EXISTS users(
         name VARCHAR (100) NOT NULL,
-        age INTEGER NOT NULL,,
+        age INTEGER NOT NULL,
         hobby TEXT
     )
 """)
 connect.commit()
 
+
 # CRUD Create Read Update Delete
 
 def create_user(name, age, hobby):
-    # cursor.execute(f"INSERT INTO Users(name, age, hobby) VALUES("{name}", "{age}", "{hobby}") ")
+    #cursor.execute(f'INSERT INTO users(name, age, hobby) VALUES("{name}", "{age}", "{hobby}")')
     cursor.execute(
-        "INSERT INTO users(name, age, hobby) VALUES (?, ?, ?,)",
+        "INSERT INTO users(name, age, hobby) VALUES(?, ?, ?)",
         (name, age, hobby)
     )
     connect.commit()
-    print("User created successfully")
+    print("user added!!")
 
-create_user('Ardager', 23, 'Sleep')
+# create_user('Stas', 23, "Спать")
 
-def read_user():
-    cursor.execute("SELECT * FROM users")
-    users = cursor.fetchone()
 
+
+def read_users():
+    cursor.execute('SELECT * FROM users')
+    users = cursor.fetchall()
+    # print(users)
     for i in users:
-        print(f"NAME: {i[0]}, AGE: {i[1]}, HOBBY: {i[2]}")
-    print(users)
+        print(f"NAME: {i[0]}, AGE: {i[1]} HOBBY: {i[2]}")
 
-read_user()
+# read_users()
 
 def update_user(new_name, rowid):
-    # cursor.execute(f'UPDATE users SET name = "{new_name}" WHERE rowid = {rowid}')
+    # cursor.execute(f'UPDATE users SET name = "{new_name}" WHERE rowid = "{rowid}"')
     cursor.execute(
-        f'UPDATE users SET name=? WHERE rowid=?',
+        'UPDATE users SET name = ? WHERE rowid = ?',
         (new_name, rowid)
     )
     connect.commit()
-    print("User updated successfully")
+    print("user updated!!")
 
-update_user("John", 3)
+update_user("Nikita", 3)
 
-read_user()
+# read_users()
 
 def delete_user(rowid):
-    cursor.execute(
-            "DELETE FROM users WHERE rowid= '{rowid}'",
-    )
+    cursor.execute(f"DELETE FROM users WHERE rowid = '{rowid}'")
     connect.commit()
-    print("User deleted successfully")
+    print('Users deleted!!')
 
-delete_user(2)
+# delete_user(2)
